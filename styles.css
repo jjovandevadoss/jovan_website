@@ -1,0 +1,29 @@
+.page_title{
+    text-align:center;
+    background-image: repeating-linear-gradient(45deg,#FFC0CB,#0000FF);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.main_content{
+    text-align: center;
+}
+
+.vl {
+    border-left: 1px dashed grey;
+    height: 100%;
+    position: absolute;
+    left: 20%;
+    margin-left: -3px;
+    top: 0;
+  }
+
+  .vl {
+    border-right: 1px dashed grey;
+    height: 100%;
+    position: absolute;
+    right: 20%;
+    margin-right: -3px;
+    top: 0;
+  }
