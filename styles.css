@@ -1,9 +1,14 @@
-.page_title{
+.color_gradient_text{
     text-align:center;
-    background-image: repeating-linear-gradient(45deg,#FFC0CB,#0000FF);
+    background-image: repeating-linear-gradient(45deg,#0000FF,#FF69B4);
     background-size: 100%;
     -webkit-background-clip: text;
     color: transparent;
+    display: inline-block;
+}
+
+.home_title{
+    color: orange;
 }
 
 .main_content{
