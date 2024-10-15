@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles.css" rel="stylesheet">
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <title>Jovan</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("pestibuzz").addEventListener("click", function() {
+                window.open("http://pestibuzz.com", "_blank");
+            });
+            document.getElementById("paveble").addEventListener("click", function() {
+                window.open("http://paveble.com", "_blank");
+            });
+        });
+        </script>
 </head>
+
 <body> 
     <header class="header_content">
         <br>
@@ -21,7 +34,8 @@
     <ol>
         <li><h6>Paveble</h6></li>
         <ul>
-            <li>At Paveble, I take care of all the technical aspects of the product. </li>
+            <li>Paveble is all about accesibility through braille technology</li>
+            <li>I work on the technical aspects of the product</li>
         </ul>
         <br>
         <li><h6>Pestibuzz</h6></li>
@@ -30,9 +44,12 @@
         </ul>
     </ol>
     <br>
-    <button type ="button" class="btn btn-outline-success margin"> Visit Pestibuzz</button>
-    <button type ="button" class="btn btn-outline-primary ">Visit Paveble</button>
+
+    <button type ="button" class="btn btn-outline-success margin " id ="pestibuzz" href="http://pestibuzz.com"> Visit Pestibuzz</button>
+    <button type ="button" class="btn btn-outline-primary " id = "paveble">Visit Paveble</button>
+    
     </div> 
+
 
 
     <div class = "vl"></div>
