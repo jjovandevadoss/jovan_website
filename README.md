@@ -7,3 +7,4 @@ Todo:
 1. Add a footer with contact information 
 2. Add the 3D art section 
 3. Maybe a navbar with more pages about yourself
+

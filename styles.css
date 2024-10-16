@@ -37,6 +37,8 @@
   .main_body{
     margin-left:22%;
     margin-right:22%;
+    display: block;
+
 
   }
 
@@ -49,4 +51,15 @@
   .margin{
     margin-left: 10%;
     position: relative;
+  }
+
+  footer{
+    text-align: center;
+    margin-top: auto;  
+    position: absolute;
+    width: 55%;
+    bottom:5%;
+    padding: 2%;
+    background-image: linear-gradient(to bottom, white,whitesmoke );
+    border-radius: 15px;
   }
