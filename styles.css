@@ -58,13 +58,12 @@
 
   footer{
     text-align: center;
-    margin-top: auto;  
-    position: absolute;
-    width: 55%;
-    bottom:5%;
+    margin: 2rem auto;
+    width: 65%;
     padding: 2%;
     background-image: linear-gradient(to bottom, white,whitesmoke );
     border-radius: 15px;
+    position: relative;
   }
 
   @media (max-width: 768px) {
@@ -79,9 +78,9 @@
       margin-right: 10%;
 
     }
-    .footer{
-      margin-left: 30%;
-      margin-right: 30%;
+    footer {
+        width: 80%;
+        margin: 2rem auto;
     }
   }
   .social-links {
