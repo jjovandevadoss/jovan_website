@@ -22,22 +22,22 @@
             document.getElementById('navbarNav').classList.toggle('show');
         }
     </script>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home (current)</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="art.html">3D</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="year.html">Year Progress</a>
-                      </li>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,31 +45,26 @@
 </head>
 
 <body> 
-    <header class="header_content">
-        <br>
-        <h1 class ="home_title">Hello 👋</h1>
-        <h5 class = "color_gradient_text">Jovan Devadoss's Digital Portfolio</h5>
-    </header>
-    <hr>
-    <br>
-    <div class = "main_body">
-    <h4>Projects: <img src="../Assets/Jovan_visionary.jpeg" class="rounded float-end img-fluid profile_image"  alt="Jovan wearing the Apple vision pro, looking into the future"></h4> 
-    <ol>
-        <br>
-        <li><h6>Pestisearch</h6></li>
-        <ul>
-            <li>Need crop protection advice? Pestisearch is here to provide you with instant, profitable, and sustainable crop protection advice!</li>
-            <br>
-            <button type ="button" class="btn btn-outline-success margin" id ="Pestisearch" href="https://www.pestisearch.com"> Visit Pestisearch</button>
-        </ul>
-        <br>
-        <li><h6>Paveble</h6></li>
-        <ul>
-            <li>Working on making braille even more accesible</li>
-            <br>
-            <button type ="button" class="btn btn-outline-primary margin" id ="Paveble" href="https://www.paveble.com"> Visit Paveble</button>
-        </ul>
-    </ol>
+    <div class="portfolio-section">
+        <header class="text-center">
+            <h1 class="home_title">👋</h1>
+            <h5 class="gradient-text">Jovan Devadoss's Digital Portfolio</h5>
+        </header>
+                
+        <div class="projects">
+            <div class="project-card">
+                <h2 class="project-title">Pestisearch</h2>
+                <p>Need crop protection advice? Pestisearch is here to provide you with instant, profitable, and sustainable crop protection advice!</p>
+                <button class="custom-button" id="Pestisearch">Visit Pestisearch</button>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Paveble</h2>
+                <p>Working on making braille even more accessible</p>
+                <button class="custom-button" id="Paveble">Visit Paveble</button>
+            </div>
+        </div>
+    </div>
     <br>        
     <br>
     <div class = "vl"></div>

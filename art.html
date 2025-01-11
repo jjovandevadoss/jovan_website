@@ -29,15 +29,13 @@
         </div>
     </nav>
 
-    <header class="header_content">
-        <br>
-        <h1 class="color_gradient_text">3D Art Gallery</h1>
-        <hr>
-    </header>
-
     <div class="container">
-        <div class="row g-4" id="gallery">
-            <!-- Images will be loaded here using JavaScript -->
+        <header class="text-center mb-5">
+            <h1 class="heading">3D Art Gallery</h1>
+        </header>
+
+        <div class="gallery-grid" id="gallery">
+            <!-- Images will be loaded here -->
         </div>
     </div>
 
@@ -74,17 +72,14 @@
 
         const gallery = document.getElementById('gallery');
         
+        // Update gallery item template
         images.forEach(image => {
             gallery.innerHTML += `
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card h-100">
-                        <img src="Assets/3D_art/${image}" 
-                             class="card-img-top" 
-                             alt="3D Artwork"
-                             onclick="showImage(this.src)"
-                             style="cursor: pointer;"
-                             onerror="this.onerror=null; this.src='Assets/placeholder.png';">
-                    </div>
+                <div class="art-card">
+                    <img src="Assets/3D_art/${image}" 
+                         alt="3D Artwork"
+                         onclick="showImage(this.src)"
+                         onerror="this.onerror=null; this.src='Assets/placeholder.png';">
                 </div>
             `;
         });
