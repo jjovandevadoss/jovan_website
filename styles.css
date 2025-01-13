@@ -16,6 +16,9 @@
 body {
     min-height: 100vh;
     background: var(--bg-cream);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 /* Navbar styles */
@@ -199,12 +202,16 @@ body {
 
   footer{
     text-align: center;
-    margin: 2rem auto;
+    margin-top: auto;  /* Changed from margin: 2rem auto */
     width: 65%;
     padding: 2%;
     background-image: linear-gradient(to bottom, white,whitesmoke );
     border-radius: 15px;
     position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 768px) {
@@ -448,5 +455,22 @@ body {
 @media (max-width: 768px) {
     .vl {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container {
+        padding: 1.5rem;
+        margin: 1rem;
+        width: 95% !important;
+    }
+    
+    .custom-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    textarea.form-control {
+        min-height: 150px;
     }
 }
