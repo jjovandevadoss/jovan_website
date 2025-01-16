@@ -25,12 +25,12 @@ body {
     color: black;
 }
 
-.nav :active{
-    color:darkviolet
+.nav .active a {
+    color: rgb(60, 5, 122);
 }
 
 button {
-    background-color: blueviolet;
+    background-color: rgb(60, 5, 122);
     border-radius: 20px;
     color: yellow;
     padding: 10px 20px;
@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-    background-color: darkviolet;
+    background-color: rgb(95, 12, 190);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
