@@ -4,228 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Year Progress</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="../styles.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background: #fdfaf5;
-    }
-
-    .main-content {
+    nav ul {
+      text-align: center;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: calc(100vh - 56px); /* Subtract navbar height */
-      padding: 20px;
+      justify-content: space-evenly;
+      text-decoration: none;
+      list-style: none;
+      padding: 0;
     }
 
-    .navbar {
-      position: relative;
-      z-index: 1000;
-      background-color: #fdfaf5 !important;
-      border-bottom: 2px solid #351854;
-      box-shadow: 0 2px 10px rgba(53, 24, 84, 0.1);
+    nav a {
+      text-decoration: none;
+      color: black;
     }
 
-    .nav-link {
-      color: #351854 !important;
-      font-family: 'Times New Roman', Times, serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 1rem 1.5rem !important;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: #4a1f75 !important;
-      transform: translateY(-1px);
-    }
-
-    .nav-item.active .nav-link {
-      font-weight: bold;
+    nav .active a {
+      color: darkviolet;
     }
 
     .container {
-      width: 450px;
-      background: #fdfaf5;
-      border-radius: 4px;
-      box-shadow: 0 8px 20px rgba(53, 24, 84, 0.15);
-      padding: 32px;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
       text-align: center;
-      border: 2px solid #351854;
-      position: relative;
-      margin-top: 2rem;
+    }
+
+    .view {
+      margin-bottom: 30px;
     }
 
     .heading {
-      font-size: 32px;
-      font-weight: normal;
-      margin-bottom: 24px;
-      color: #351854;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      text-shadow: 1px 1px 0 #fdfaf5;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .subheading {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #666;
     }
 
     .progress-bar {
-      position: relative;
-      width: 180px;
-      height: 360px;
+      width: 50px;
+      height: 300px;
+      border: 2px solid blueviolet;
       margin: 0 auto;
-      border: 2px solid #351854;
-      border-radius: 3px;
+      position: relative;
+      border-radius: 25px;
       overflow: hidden;
-      box-shadow: inset 0 0 10px rgba(53, 24, 84, 0.1);
     }
 
     .progress-fill {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: linear-gradient(180deg, #4a1f75 0%, #351854 100%);
-      transition: height 1s ease;
+      background-color: blueviolet;
+      transition: height 0.5s ease;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(25, 1fr);
-      gap: 4px;
-      justify-content: center;
-      margin: 24px auto 0;
-      max-width: 350px;
+      grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+      gap: 5px;
+      margin: 20px auto;
+      max-width: 600px;
     }
 
     .circle {
-      width: 12px;
-      height: 12px;
-      border: 1px solid #351854;
-      border-radius: 2px;
-      transition: all 0.3s ease;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
     }
 
     .circle.filled {
-      background: #351854;
-      box-shadow: 0 0 5px rgba(53, 24, 84, 0.3);
+      background-color: blueviolet;
+      border-color: blueviolet;
+    }
+
+    .circle.sunday {
+      background-color: #930707;
+    }
+
+    .circle.special-day {
+      background-color: #FFD700;
+    }
+
+    .circle.christmas {
+      background-color: #00712a;
+    }
+
+    #days-view {
+      display: none;
     }
 
     .buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
+      margin-top: 30px;
     }
 
-    .button {
-      flex: 1;
-      padding: 12px;
-      border-radius: 3px;
-      border: 2px solid #351854;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background: transparent;
-      color: #351854;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    .buttons button.active {
+      background-color: darkviolet;
+      transform: translateY(-2px);
     }
-
-    .button.active {
-      background: #351854;
-      color: #fdfaf5;
-    }
-
-    .button:hover:not(.active) {
-      background: rgba(53, 24, 84, 0.1);
-    }
-
-    .subheading {
-      font-size: 18px;
-      color: #351854;
-      margin-top: 12px;
-      font-style: italic;
-    }
-
-    .view {
-      transition: all 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .view {
-      animation: fadeIn 0.5s ease-out;
-    }
-
-    .circle.filled.sunday {
-        background: #8B0000;  /* Dark red for Sundays */
-    }
-    
-    .circle.filled.special-day {
-        background: #FF0000;  /* Bright red for Christian holidays */
-    }
-    
-    .circle.filled.march-thirty {
-        background: #9370DB;  /* Special purple for March 30 */
-    }
-    
-    .circle.filled.christmas {
-        background: linear-gradient(135deg, #FF0000, #006400);  /* Red and green gradient for December */
-    }
-
-    /* Update navbar styles to match other pages */
-        /* Add proper navbar active state */
-        .nav-item.active .nav-link {
-            position: relative;
-            font-weight: bold;
-        }
-
-        .nav-item.active .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 2px;
-            background-color: #351854;
-        }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="art.html">3D</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="year.html">Year Progress</a>
-          </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="empty_form.html">Form</a>
-        </li>
-        </ul>
-      </div>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="art.html">3D</a></li>
+      <li class="active"><a href="year.html">Year Progress</a></li>
+      <li><a href="empty_form.html">Form</a></li>
+    </ul>
   </nav>
   
   <div class="main-content">
@@ -239,7 +131,7 @@
       </div>
 
       <!-- Days View -->
-      <div id="days-view" class="view" style="display: none;">
+      <div id="days-view" class="view">
         <div class="heading" id="days-text">73/365</div>
         <div class="subheading" id="current-date">Friday, March 14, 2025</div>
         <div class="grid" id="grid"></div>
@@ -247,8 +139,8 @@
 
       <!-- Buttons -->
       <div class="buttons">
-        <button class="button active" id="btn-percentage">Percentage</button>
-        <button class="button" id="btn-days">Days</button>
+        <button id="btn-percentage">Percentage</button>
+        <button id="btn-days">Days</button>
       </div>
     </div>
   </div>
@@ -362,5 +254,15 @@
       btnPercentage.classList.remove('active');
     });
   </script>
+
+<footer>
+  <h6>Email Me!</h6>
+  <p><a href="mailto:jovan@jovandevadoss.com" style="text-decoration: none; color: inherit;">📬 jovandevadoss447@gmail.com</a></p>
+  <div class="social-links">
+      <a href="https://x.com/DevadossJovan" target="_blank" title="Follow me on X">𝕏</a>
+      <a href="https://www.instagram.com/jovandevadoss/" target="_blank" title="Follow me on Instagram">📸</a>
+  </div>
+</footer>
+
 </body>
 </html>
