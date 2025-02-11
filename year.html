@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Year Progress Tracker - Visual representation of time passing">
-    <meta name="author" content="Jovan Devadoss">
-    <meta name="theme-color" content="#ffffff">
-    <meta property="og:title" content="Year Progress - Jovan Devadoss">
-    <meta property="og:description" content="Track the progress of the current year with visual indicators">
-    <meta property="og:type" content="website">
-    <link href="../styles.css" rel="stylesheet">
-    <title>Year Progress</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year Progress</title>
+  <link href="../styles.css" rel="stylesheet">
   <style>
+    nav ul {
+      text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      text-decoration: none;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+    }
+
+    nav .active a {
+      color: rgb(60, 5, 122);
+    }
+
     .container {
       max-width: 800px;
       margin: 40px auto;
@@ -96,72 +108,39 @@
       background-color: rgb(60, 5, 122);
       transform: translateY(-2px);
     }
-
-    @media (max-width: 600px) {
-        .container {
-            margin: 20px auto;
-            padding: 10px;
-        }
-
-        .grid {
-            grid-template-columns: repeat(auto-fill, minmax(15px, 1fr));
-            gap: 3px;
-            max-width: 100%;
-        }
-
-        .circle {
-            width: 12px;
-            height: 12px;
-        }
-
-        .heading {
-            font-size: 1.5em;
-        }
-
-        .subheading {
-            font-size: 1em;
-        }
-
-        .buttons button {
-            padding: 8px 16px;
-            font-size: 14px;
-        }
-    }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <nav>
-      <ul class="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="art.html">3D</a></li>
-        <li class="active"><a href="year.html">Year Progress</a></li>
-        <li><a href="empty_form.html">Form</a></li>
-      </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="art.html">3D</a></li>
+      <li class="active"><a href="year.html">Year Progress</a></li>
+      <li><a href="empty_form.html">Form</a></li>
+    </ul>
+  </nav>
   
-    <div class="main-content">
-      <div class="container">
-        <!-- Percentage View -->
-        <div id="percentage-view" class="view">
-          <div class="heading" id="percentage-text">20% Of 2025</div>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-bar-fill"></div>
-          </div>
+  <div class="main-content">
+    <div class="container">
+      <!-- Percentage View -->
+      <div id="percentage-view" class="view">
+        <div class="heading" id="percentage-text">20% Of 2025</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-bar-fill"></div>
         </div>
+      </div>
 
-        <!-- Days View -->
-        <div id="days-view" class="view">
-          <div class="heading" id="days-text">73/365</div>
-          <div class="subheading" id="current-date">Friday, March 14, 2025</div>
-          <div class="grid" id="grid"></div>
-        </div>
+      <!-- Days View -->
+      <div id="days-view" class="view">
+        <div class="heading" id="days-text">73/365</div>
+        <div class="subheading" id="current-date">Friday, March 14, 2025</div>
+        <div class="grid" id="grid"></div>
+      </div>
 
-        <!-- Buttons -->
-        <div class="buttons">
-          <button id="btn-percentage">Percentage</button>
-          <button id="btn-days">Days</button>
-        </div>
+      <!-- Buttons -->
+      <div class="buttons">
+        <button id="btn-percentage">Percentage</button>
+        <button id="btn-days">Days</button>
       </div>
     </div>
   </div>
