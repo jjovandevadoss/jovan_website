@@ -4,19 +4,20 @@ header{
     text-align: center;
 }
 body {
-    background-color: #c7d8ed ;
-    margin-left: 10%;
-    background: radial-gradient(circle, #c7d8ed 0%, #ffffff 50%, #c7d8ed 100%);
-    margin-right: 10%;
-    margin-top: 0%;
+    background-color: white;
+    margin: 0;
+    padding: 0 20px;
     font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
 }
 
 .nav {
-    text-align: center;
+    padding: 0;
+    margin: 20px 0;
     display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     list-style: none;
 }
 
@@ -50,21 +51,21 @@ button:hover {
 
 footer {
     text-align: center;
-    position: fixed;
+    padding: 20px;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
     z-index: 900;
+    margin-top: 40px; /* Add some space above the footer */
+    background-color: #f8f9fa; /* Optional: Add a background color */
+    border-top: 1px solid #dee2e6; /* Optional: Add a border */
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 250px;
-    gap: 30px;
-    padding: 20px;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .gallery-item {
@@ -109,6 +110,28 @@ footer {
     filter: none;
 }
 
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        border: 8px solid white;
+        transform: none !important;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.05) !important;
+    }
+}
 
 .form-section {
     display: flex;
@@ -149,10 +172,98 @@ textarea{
 }
 
 .project{
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: right;
-    margin: 5%;
     margin-bottom: 20px;
+}
 
+@media (max-width: 600px) {
+    .form-section {
+        padding: 20px;
+    }
+
+    textarea {
+        width: calc(100% - 20px);
+    }
+
+    footer {
+        position: relative;
+        padding: 20px 0;
+    }
+}
+
+nav {
+    background-color: #f8f9fa; /* Optional: Add a background color */
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6; /* Optional: Add a border */
+}
+
+nav ul {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the items */
+    gap: 20px; /* Space between items */
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margins */
+}
+
+nav li {
+    margin: 0; /* Remove default list item margins */
+}
+
+nav a {
+    text-decoration: none;
+    color: #495057; /* A muted color for the links */
+    font-weight: 500;
+    padding: 8px 12px; /* Add some padding for better touch area */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    color: rgb(60, 5, 122); /* Hover color */
+}
+
+nav .active a {
+    color: rgb(60, 5, 122);
+    font-weight: bold; /* Make the active link bold */
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Add a container to ensure content doesn't get hidden */
+.content-wrapper {
+    min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+    padding-bottom: 150px; /* Ensure footer doesn't overlap content */
+    position: relative;
+}
+
+/* Style for social links */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.5em; /* Adjust size as needed */
+    color: #495057; /* Muted color for the links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: rgb(60, 5, 122); /* Hover color */
 }
