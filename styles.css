@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 header{
     text-align: center;
 }
@@ -9,6 +13,12 @@ body {
     padding: 0 20px;
     font-family: 'IBM Plex Mono', monospace;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .nav {
@@ -204,14 +214,14 @@ nav {
     border-bottom: 1px solid #dee2e6; /* Optional: Add a border */
 }
 
-nav ul {
+nav ul.nav {
     text-align: center;
     display: flex;
     justify-content: center; /* Center the items */
     gap: 20px; /* Space between items */
     list-style: none;
     padding: 0;
-    margin: 0; /* Remove default margins */
+    margin: 20px 0; /* Consistent margin with .nav class */
 }
 
 nav li {
@@ -336,11 +346,14 @@ nav .active a {
     align-items: center;
     text-align: left;
     padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .paveble-container .content {
     max-width: 900px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .paveble-page header h1 {
@@ -362,12 +375,12 @@ nav .active a {
     font-weight: bold;
 }
 
-.paveble-page ul {
+.paveble-page .content ul {
     list-style: disc;
     padding-left: 20px;
 }
 
-.paveble-page ul li {
+.paveble-page .content ul li {
     color: #A22c29; /* Red for list items */
     margin-bottom: 10px;
     font-weight: 500;
@@ -379,11 +392,15 @@ nav .active a {
 
 .paveble-page nav a {
     color: #140F2D; /* Dark purple text for nav links */
-    font-weight: bold;
+    font-weight: 500; /* Match the default nav link weight */
 }
 
 .paveble-page nav a:hover {
     color: #A22c29; /* Red on hover */
+}
+
+.paveble-page nav .active a {
+    font-weight: bold; /* Only active link is bold */
 }
 
 .paveble-page .pitch-deck-container {
