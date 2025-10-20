@@ -18,7 +18,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    list-style: none;
+    list-style: none !important;
 }
 
 .nav a {
@@ -265,23 +265,43 @@ nav .active a {
     transition: color 0.3s ease;
 }
 
-social-links a:hover {
+.social-links a:hover {
     color: rgb(60, 5, 122); /* Hover color */
+}
+
+.paveble-page footer {
+    background-color: #F5F9E9;
+    border-top: 1px solid #dee2e6;
+}
+
+.paveble-page footer,
+.paveble-page footer h6,
+.paveble-page footer p a {
+    color: #140F2D;
+}
+
+.paveble-page footer .social-links a {
+    color: #140F2D;
+}
+
+.paveble-page footer .social-links a:hover {
+    color: #A22c29;
 }
 
 /* Pitch deck container styling */
 .pitch-deck-container {
     margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #f8f9fa;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .pitch-deck-container iframe {
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none !important;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none !important;
 }
 
 /* Responsive design for mobile devices */
@@ -302,6 +322,19 @@ social-links a:hover {
     color: #A22c29; /* Red text */
 }
 
+.paveble-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+}
+
+.paveble-container .content {
+    max-width: 900px;
+    width: 100%;
+}
+
 .paveble-page header h1 {
     color: #140F2D; /* Dark purple for main title */
     font-size: 3em;
@@ -316,9 +349,14 @@ social-links a:hover {
 }
 
 .paveble-page h4 {
-    color: #2Ab7Ee; /* Light blue for subsection headings */
+    color: #A22c29; /* Red text for subsection headings */
     font-size: 1.3em;
     font-weight: bold;
+}
+
+.paveble-page ul {
+    list-style: disc;
+    padding-left: 20px;
 }
 
 .paveble-page ul li {
@@ -337,8 +375,7 @@ social-links a:hover {
 }
 
 .paveble-page nav a:hover {
-    color: #2Ab7Ee; /* Blue on hover */
-    background-color: rgba(42, 183, 238, 0.1);
+    color: #A22c29; /* Red on hover */
 }
 
 .paveble-page .pitch-deck-container {
@@ -350,7 +387,7 @@ social-links a:hover {
 }
 
 .paveble-page .pitch-deck-container a {
-    color: #2Ab7Ee; /* Blue links */
+    color: #A22c29; /* Red links */
     font-weight: bold;
 }
 
@@ -369,14 +406,14 @@ social-links a:hover {
 }
 
 .featured-video h4 {
-    color: #2Ab7Ee !important;
+    color: #A22c29 !important;
     margin-bottom: 15px;
     font-size: 1.3em;
 }
 
 .featured-video video {
     width: 100%;
-    max-width: 600px;
+    max-width: 200px;
     height: auto;
     border-radius: 8px;
 }
@@ -398,6 +435,46 @@ social-links a:hover {
 
 .image-grid img:hover {
     transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Responsive design */

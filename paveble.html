@@ -17,53 +17,88 @@
     </nav>
     <header>
         <h1>Paveble</h1>
-    </header>         
-    <div class="content">
-        <h2>Why does the world need paveble?</h2>
-        <ul>
-            <li>Audiocaptions are Inconvenient</li>
-            <li>Existing braille readers are expensive</li>
-            <li>People who are blind have limited access to digital world and braille</li>
-        </ul>
+    </header>
+    <div class="paveble-container">
+        <div class="content">
+            <h2>Why does the world need paveble?</h2>
+            <ul>
+                <li>Audiocaptions are Inconvenient</li>
+                <li>Existing braille readers are expensive</li>
+                <li>People who are blind have limited access to digital world and braille</li>
+            </ul>
 
-        <H4>
-            Check out our pitch deck!
-        </H4>
-        
-        <div class="pitch-deck-container">
-            <iframe src="paveble pitch deck.pdf" 
-                    width="100%" 
-                    height="600px" 
-                    type="application/pdf">
-                <p>Your browser does not support viewing PDFs. 
-                   <a href="paveble pitch deck.pdf">Download the PDF</a>.
-                </p>
-            </iframe>
-        </div>
-        <br>
-
-        <h2>What role do I play at Paveble?</h2>
-        <p>I am responsible for all technical aspects of the project. I collaborated closely with the team at Kerala Startup Mission and successfully developed our first functional braille cell and PCB prototype after over 30 iterations. My designs were created after thoroughly exploring various resources and open-source projects available online.</p>
-
-        <h2>Project Gallery</h2>
-        
-        <div class="simple-gallery">
-            <div class="featured-video">
-                <h4>🎥 Prototype in Action</h4>
-                <video controls>
-                    <source src="Assets/paveble_images/prototype_functioning_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <h4>
+                Check out our pitch deck!
+            </h4>
             
-            <div class="image-grid">
-                <img src="Assets/paveble_images/withkrish_after_troubleshooting.jpeg" alt="Team collaboration">
-                <img src="Assets/paveble_images/testing_out_different_Copper.jpeg" alt="Copper testing">
-                <img src="Assets/paveble_images/trouble_shooting.jpeg" alt="Troubleshooting">
-                <img src="Assets/paveble_images/trouble_shooting_kicad.jpeg" alt="KiCad work">
-                <img src="Assets/paveble_images/more_trouble_shooting.jpeg" alt="More troubleshooting">
+            <div class="pitch-deck-container">
+                <iframe src="paveble pitch deck.pdf" 
+                        width="100%" 
+                        height="600px" 
+                        type="application/pdf">
+                    <p>Your browser does not support viewing PDFs. 
+                       <a href="paveble pitch deck.pdf">Download the PDF</a>.
+                    </p>
+                </iframe>
+            </div>
+            <br>
+
+            <h2>What role do I play at Paveble?</h2>
+            <p>I'm responsible for all technical aspects of the project. I collaborated closely with the team at Kerala Startup Mission and successfully developed our first functional Braille cell and PCB prototype after over 30 iterations. My designs were created after thoroughly exploring various resources and open-source projects available online.</p>
+
+            <h2>Project Gallery</h2>
+            
+            <div class="simple-gallery">
+                <div class="featured-video">
+                    <h4>🎥 Prototype in Action</h4>
+                    <video controls>
+                        <source src="Assets/paveble_images/prototype_functioning_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="image-grid">
+                    <img src="Assets/paveble_images/withkrish_after_troubleshooting.jpeg" alt="Team collaboration" onclick="expandImage(this);">
+                    <img src="Assets/paveble_images/testing_out_different_Copper.jpeg" alt="Copper testing" onclick="expandImage(this);">
+                    <img src="Assets/paveble_images/trouble_shooting.jpeg" alt="Troubleshooting" onclick="expandImage(this);">
+                    <img src="Assets/paveble_images/trouble_shooting_kicad.jpeg" alt="KiCad work" onclick="expandImage(this);">
+                    <img src="Assets/paveble_images/more_trouble_shooting.jpeg" alt="More troubleshooting" onclick="expandImage(this);">
+                </div>
             </div>
         </div>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="expanded-img">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("image-modal");
+
+        // Get the image and insert it inside the modal
+        var modalImg = document.getElementById("expanded-img");
+        function expandImage(img) {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal content, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 
 </body>         
