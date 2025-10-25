@@ -79,16 +79,7 @@
     }
 
     #days-view {
-      display: none;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .buttons button.active {
-      background-color: rgb(60, 5, 122);
-      transform: translateY(-2px);
+      display: block;
     }
   </style>
 </head>
@@ -98,43 +89,23 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="art.html">3D</a></li>
       <li class="active"><a href="year.html">Year Progress</a></li>
-      <li><a href="empty_form.html">Form</a></li>
     </ul>
   </nav>
   
   <div class="main-content">
     <div class="container">
-      <!-- Percentage View -->
-      <div id="percentage-view" class="view">
-        <div class="heading" id="percentage-text">20% Of 2025</div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-bar-fill"></div>
-        </div>
-      </div>
-
       <!-- Days View -->
       <div id="days-view" class="view">
         <div class="heading" id="days-text">73/365</div>
         <div class="subheading" id="current-date">Friday, March 14, 2025</div>
         <div class="grid" id="grid"></div>
       </div>
-
-      <!-- Buttons -->
-      <div class="buttons">
-        <button id="btn-percentage">Percentage</button>
-        <button id="btn-days">Days</button>
-      </div>
     </div>
   </div>
 
   <script>
     // Get references to elements
-    const percentageView = document.getElementById('percentage-view');
     const daysView = document.getElementById('days-view');
-    const btnPercentage = document.getElementById('btn-percentage');
-    const btnDays = document.getElementById('btn-days');
-    const percentageText = document.getElementById('percentage-text');
-    const progressBarFill = document.getElementById('progress-bar-fill');
     const daysText = document.getElementById('days-text');
     const currentDate = document.getElementById('current-date');
     const grid = document.getElementById('grid');
@@ -149,8 +120,6 @@
     const percentage = Math.floor((daysPassed / totalDays) * 100);
 
     // Update UI
-    percentageText.textContent = `${percentage}% Of ${currentYear}`;
-    progressBarFill.style.height = `${percentage}%`;
     daysText.textContent = `${daysPassed}/${totalDays}`;
     currentDate.textContent = now.toLocaleDateString('en-US', {
       weekday: 'long',
@@ -220,29 +189,13 @@
         
         grid.appendChild(circle);
     }
-
-    // Button functionality
-    btnPercentage.addEventListener('click', () => {
-      percentageView.style.display = 'block';
-      daysView.style.display = 'none';
-      btnPercentage.classList.add('active');
-      btnDays.classList.remove('active');
-    });
-
-    btnDays.addEventListener('click', () => {
-      daysView.style.display = 'block';
-      percentageView.style.display = 'none';
-      btnDays.classList.add('active');
-      btnPercentage.classList.remove('active');
-    });
   </script>
         <footer>
           <h6>Email Me!</h6>
-          <p><a href="mailto:jovan@jovandevadoss.com" style="text-decoration: none; color: inherit;">📬 jovan@jovandevadoss.com</a></p>
+          <p><a href="mailto:jovandevadoss447@gmail.com" style="text-decoration: none; color: inherit;">📬 jovandevadoss447@gmail.com</a></p>
           <div class="social-links">
               <a href="https://github.com/jjovandevadoss" target="_blank" title="Follow me on GitHub">🐱</a>
               <a href="https://x.com/DevadossJovan" target="_blank" title="Follow me on X">𝕏</a>
-              <a href="https://www.instagram.com/jovandevadoss/" target="_blank" title="Follow me on Instagram">📸</a>
           </div>
       </footer>
 
